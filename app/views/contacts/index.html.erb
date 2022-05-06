@@ -1,0 +1,28 @@
+<% contacts = Contact.all%>
+<% company = Company.all%>
+
+<h1> Contacts </h1>
+
+<ul>
+    <%for contact in contacts %>
+    <% company = Company.find(contact.company_id).name %>
+        <li> <%= contact["first_name"]%> , <%= contact["last_name"]%>, <%= contact["email"]%>, <%= company["name"] %></li>
+        <% end %>
+</ul>
+
+
+<table>
+<tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th>Company</th>
+</tr>
+<%for contact in contacts %>
+<tr>
+    <th><%=contact["first_name"]%></th>
+    <th><%=contact["last_name"]%></th>
+    <th><%=contact["email"]%></th>
+    <th><%=Company.find(contact.company_id).name%></th>
+</tr>
+<%end %>
