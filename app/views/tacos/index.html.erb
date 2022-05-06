@@ -1,8 +1,13 @@
+<%
+    fillings = ["Carnitas", "Al Pastor", "Carne Asada", "Vegano"]
+
+
+%>
+
 <h1> Tacos! <h1>
 
 <ul> 
-    <li> Carnitas </li>
-    <li> Al Pastor </li>
-    <li> Carne Asada </li>
-    <li> Vegano </li>
-<ul>
+    <% for filling in fillings %>
+        <li> <%= filling %>
+    <% end %>
+</ul>
